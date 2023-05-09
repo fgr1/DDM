@@ -1,20 +1,16 @@
 import React from 'react';
-import {
-  ScrollView,
-  View,
-  Image,
-  TouchableOpacity
-} from 'react-native';
-import { styles } from './styles';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 
 import MainStack from './src/navigators/MainStack';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <MainStack />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <MainStack />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 

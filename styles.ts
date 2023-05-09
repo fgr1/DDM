@@ -22,5 +22,26 @@ export const styles = StyleSheet.create({
     primaryBtnText: {
         color: colors.light3,
         fontSize: fontSizes.m
-    }
+    },
+    loadingIndicator: {
+        color: colors.secondary4,
+        size: 'large'
+    },
+    loadingText: {
+        color: colors.secondary4
+    },
+    lista: {
+        flex: 1
+    },
+    moedaCard: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    tamanhoImagem: {
+        height: 300
+    },
+    moedaTxt: {
+        color: colors.dark1
+    },
 });
