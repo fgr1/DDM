@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, ActivityIndicator, SafeAreaView, Image, ScrollView } from 'react-native';
+import { View, Text, FlatList, ActivityIndicator, SafeAreaView, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { styles } from '../../styles';
 import { useNavigation } from '@react-navigation/native';
 import useMoedasData from '../components/apimoedas';
@@ -7,6 +7,10 @@ import useMoedasData from '../components/apimoedas';
 function HomeScreen() {
   const { loading, moedas } = useMoedasData();
   const navigation = useNavigation();
+
+  const handleItemPress = (item) => {
+    navigation.navigate('About', { item });
+  };
 
   return (
     <SafeAreaView>
@@ -23,12 +27,12 @@ function HomeScreen() {
               style={styles.lista}
               data={moedas}
               renderItem={({ item }) => (
-                <View style={styles.moedaCard}>
+                <TouchableOpacity style={styles.moedaCard} onPress={() => handleItemPress(item)}>
                   <Image source={{ uri: item.icon }} style={styles.tamanhoImagem} />
                   <Text style={styles.moedaTxt}>{item.name}</Text>
-                </View>
+                </TouchableOpacity>
               )}
-              keyExtractor={(item) => item.id.toString()} // Convert id to string for keyExtractor
+              keyExtractor={(item) => item.id.toString()}
             />
           </>
         )}
@@ -38,4 +42,3 @@ function HomeScreen() {
 }
 
 export default HomeScreen;
-

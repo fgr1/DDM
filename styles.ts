@@ -44,4 +44,13 @@ export const styles = StyleSheet.create({
     moedaTxt: {
         color: colors.dark1
     },
+    aboutTitle: {
+
+    },
+    aboutText: {
+
+    },
+    aboutLink: {
+
+    },
 });
